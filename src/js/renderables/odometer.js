@@ -12,12 +12,12 @@ class Odometer extends Renderable {
     super({ renderer, theme });
     this._dashID = ID;
 
-    this._value = 99999;
+    this._value = 9999999;
     this.renderedValue = 0;
     this.bgSprite = null;
     /** @type {PIXI.Texture[]} */
     this.numberTextures = [];
-    this.numberSprites = createDigitSprites(5);
+    this.numberSprites = createDigitSprites(7);
   }
 
   // the data store values we want to listen too
