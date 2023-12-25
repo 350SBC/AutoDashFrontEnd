@@ -5,7 +5,8 @@ import { DATA_MAP } from "../common/dataMap";
 import Renderable from "./Renderable";
 import { RENDER_KEYS } from "./Renderables";
 import { gsap } from "gsap";
-const GPS_KEY = DATA_MAP.GPS_SPEEED.id;
+//const GPS_KEY = DATA_MAP.GPS_SPEEED.id;
+const GPS_KEY = DATA_MAP.SPEEDO.id;
 const SEGEMENT_PADDING = 4;
 const ID = RENDER_KEYS.SPEEDO_SWEEP;
 const STATE_ENUM = {
