@@ -4,7 +4,8 @@ import Renderable from "./Renderable";
 import { RENDER_KEYS } from "./Renderables";
 import { renderDigitTextures, createDigitSprites, formatSprites } from "../common/createDigit";
 import { Texture } from "pixi.js";
-const GPS_KEY = DATA_MAP.GPS_SPEEED.id;
+//const GPS_KEY = DATA_MAP.GPS_SPEEED.id;
+const GPS_KEY = DATA_MAP.SPEEDO.id;
 const NO_DISPLAY = 10;
 
 const ID = RENDER_KEYS.SPEEDO_READOUT;
