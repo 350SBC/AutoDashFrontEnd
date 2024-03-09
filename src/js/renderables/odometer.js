@@ -1,4 +1,5 @@
 import { GlowFilter } from "@pixi/filter-glow";
+import { SCREEN } from "../appConfig";
 import '@pixi/graphics-extras';
 import * as PIXI from "pixi.js";
 import { renderDigitTextures, createDigitSprites, formatSprites } from "../common/createDigit";
@@ -29,7 +30,7 @@ class Odometer extends Renderable {
     this._value = newValue;
   }
   get gaugeHeight() {
-    return 60;
+    return  SCREEN.ODOMETER_READOUT_HEIGHT;
   }
 
   initialize() {

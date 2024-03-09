@@ -35,22 +35,22 @@ const speedoClusterControl = {
     speedoCluster.y = SCREEN.SPEEDO_CLUSTER_Y;
 
     speedoReadout.x = speedoSpeed.width - speedoReadout.width;
-    speedoReadout.y = SCREEN.BOTTOM_CONTENT_Y - speedoReadout.height;
+    speedoReadout.y = SCREEN.BOTTOM_CONTENT_Y - speedoReadout.height - SCREEN.ODOMETER_READOUT_HEIGHT;
 
     /**
      * @type {PIXI.BitmapText}
      */
     text = new PIXI.BitmapText("MPH", {
       fontName: "Orbitron",
-      fontSize: 50,
+      fontSize: 60,
       align: "left",
     });
     text.tint = theme.gaugeActiveColor;
     text.angle = 180; // no idea what app is flipped??
-    text.x = speedoReadout.x - text.width - 22; // fudge number lol
-    text.y = speedoReadout.y;
+    text.x = speedoReadout.x - speedoReadout.width * .6   ; // fudge number lol
+    text.y = speedoReadout.y ; //+ speedoReadout.height * .55 ;
 
-    odometer.x = speedoSpeed.width * 0.25;
+    odometer.x = SCREEN.SPEEDO_CLUSTER_WIDTH - odometer.width;
     odometer.y = SCREEN.BOTTOM_CONTENT_Y - odometer.gaugeHeight;
 
     speedoCluster.addChild(speedoSpeed, speedoReadout, text, odometer);
@@ -58,6 +58,7 @@ const speedoClusterControl = {
     speedoCluster.name = NAME;
     return [speedoCluster];
   },
+  // i think this gets called during theme changes
   refresh: ({ renderables, theme, renderer }) => {
     /** @type {SpeedoReadout} */
     const speedoReadout = renderables[RENDER_KEYS.SPEEDO_READOUT];
@@ -66,8 +67,8 @@ const speedoClusterControl = {
     /** @type {Odometer} */
     const odometer = renderables[RENDER_KEYS.ODOMETER];
     speedoReadout.x = speedoSpeed.width - speedoReadout.width;
-    speedoReadout.y = SCREEN.BOTTOM_CONTENT_Y - speedoReadout.height;
-    odometer.x = speedoSpeed.width * 0.25;
+    speedoReadout.y = SCREEN.BOTTOM_CONTENT_Y - speedoReadout.height - SCREEN.ODOMETER_READOUT_HEIGHT ;
+    odometer.x = SCREEN.SPEEDO_CLUSTER_WIDTH - odometer.width;
     odometer.y = SCREEN.BOTTOM_CONTENT_Y - odometer.gaugeHeight;
 
     text.tint = theme.gaugeActiveColor;

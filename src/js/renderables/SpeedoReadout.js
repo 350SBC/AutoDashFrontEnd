@@ -18,7 +18,7 @@ class SpeedoReadout extends Renderable {
     this.bgSprite = null;
     /** @type {Texture[]} */
     this.numberTextures = [];
-    this.numberSprites = createDigitSprites(2);
+    this.numberSprites = createDigitSprites(3);
   }
 
   // the data store values we want to listen too
@@ -42,7 +42,7 @@ class SpeedoReadout extends Renderable {
   initialize() {    
     this.renderedValue = SPEEDO_CONFIG.MAX;
     const textureData = renderDigitTextures(this.appRenderer, this.theme, this.gaugeHeight, 5, true);
-    this.numberTextures = textureData.textures;
+    this.numberTextures = textureData.textures
 
     if (!this.initialized) {
       this.addChild(...this.numberSprites);
@@ -56,10 +56,11 @@ class SpeedoReadout extends Renderable {
   update() {
     if (this._value != this.renderedValue) {
       this.renderedValue = this._value;
-      this.numberSprites[1].texture = this.numberTextures[this.renderedValue%10]
-
-      const tenthsDigit = Math.floor(this.renderedValue/10) || NO_DISPLAY
-      this.numberSprites[0].texture = this.numberTextures[tenthsDigit]
+      this.numberSprites[2].texture = this.numberTextures[this.renderedValue%10]
+      const tensDigit = Math.floor(this.renderedValue/10) || NO_DISPLAY
+      this.numberSprites[1].texture = this.numberTextures[tensDigit]
+      const hundDigit = Math.floor(this.renderedValue/100) || NO_DISPLAY
+      this.numberSprites[0].texture = this.numberTextures[hundDigit]
     }
   }
 }
