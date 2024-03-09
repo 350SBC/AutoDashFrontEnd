@@ -1,16 +1,15 @@
-import { DATA_MAP } from "../common/dataMap";
 import chroma from "chroma-js";
-import SideReadout from "./SideReadout";
+import { DATA_MAP } from "../common/dataMap";
 import { RENDER_KEYS } from "./Renderables";
+import SideReadout from "./SideReadout";
 const ID = RENDER_KEYS.CLOSED_LOOP_COMP;
-const MAP_KEY = DATA_MAP.CLOSED_LOOP_COMP.id;
-
-class compensationReadout extends SideReadout {
+const CLOSED_LOOP_COMP = DATA_MAP.CLOSED_LOOP_COMP.id;
+class CompensationReadout extends SideReadout {
   constructor({ renderer, theme }) {
     super(
       { renderer, theme },
       {
-        readoutOptions: SideReadout.ReadoutOptions.vac,
+        readoutOptions: SideReadout.ReadoutOptions.comp,
       }
     );
     this._dashID = ID;
@@ -23,23 +22,15 @@ class compensationReadout extends SideReadout {
         chroma(this.theme.warningColor),
         chroma(this.theme.gaugeActiveColor),
       ],
-      chromaDomain: [0, 5, 7],
+      chromaDomain: [0, 20, 25],
     };
   }
 
   // the data store values we want to listen too
   get dataKey() {
-    return MAP_KEY;
-  }
-
-  set value(newValue) {
-    // turn kpa into inHG
-    newValue = Math.abs((newValue * 0.2961) - 29.61);
-    
-    this.readout.value = newValue;
-    this.bargraph.value = newValue;
+    return CLOSED_LOOP_COMP;
   }
 }
 
-compensationReadout.ID = ID;
-export default compensationReadout;
+CompensationReadout.ID = ID;
+export default CompensationReadout;

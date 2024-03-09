@@ -33,7 +33,7 @@ const testingArea = ({renderer, theme, renderables}) => {
   const volt = renderables[RENDER_KEYS.VOLTAGE_READOUT];
   const cts = renderables[RENDER_KEYS.CTS_READOUT];
   const mat = renderables[RENDER_KEYS.MAT_READOUT];
-  const comp = renderables[RENDER_KEYS.CLOSED_LOOP_COMP_READOUT];
+  const comp = renderables[RENDER_KEYS.CLOSED_LOOP_COMP];
   
 
   let readoutLogo = new Sprite();
@@ -58,14 +58,14 @@ const testingArea = ({renderer, theme, renderables}) => {
   volt.x = oilPressureReadout.x + oilPressureReadout.width + padding;
   volt.y = oilPressureReadout.y;
 
-  //comp.x = volt.x;
-  //comp.y = volt.y + volt.gaugeHeight + vert_padding;
+  comp.x = volt.x;
+  comp.y = volt.y + volt.gaugeHeight + vert_padding;
+ 
+  mat.x = volt.x;
+  mat.y = comp.y + comp.gaugeHeight + vert_padding;
 
-  //mat.x = comp.x;
- // mat.y = comp.y + comp.gaugeHeight + vert_padding;
 
-
-  gaugeContainer.addChild(readoutLogo, oilPressureReadout, fuelPressureReadout, volt, cts, mat, ign, vacReadout, readoutLogo);
+  gaugeContainer.addChild(readoutLogo, oilPressureReadout, fuelPressureReadout, volt, cts, mat, comp, ign, vacReadout, readoutLogo);
   const x = afrGraph.x + afrGraph.width + 50;
   gaugeContainer.x = x;
   gaugeContainer.y = 5;

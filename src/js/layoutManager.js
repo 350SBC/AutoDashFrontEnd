@@ -29,7 +29,7 @@ import { app_settings } from "./appConfig";
 import FullScreenWarnings from "./renderables/FullScreenWarning";
 import IgnTimingReadout from "./renderables/IgnTimingReadout";
 import VacuumReadout from "./renderables/VacuumReadout";
-import compensationReadout from "./renderables/CompensationReadout";
+import CompensationReadout from "./renderables/CompensationReadout";
 import Offline from "./renderables/Offline";
 
 const auxScreenClusters = []
@@ -77,7 +77,7 @@ const createGauges = ({ renderables }) => {
     renderables.createRenderable(IgnTimingReadout);
     renderables.createRenderable(VacuumReadout);
     renderables.createRenderable(FuelPressureReadout);
-    renderables.createRenderable(compensationReadout);
+    renderables.createRenderable(CompensationReadout);
     renderables.createRenderable(Offline);
   }
 };
