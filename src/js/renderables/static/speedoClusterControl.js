@@ -5,7 +5,7 @@ import { RENDER_KEYS } from "../Renderables";
 import RPMGauge from "../RPMGauge";
 import SpeedoReadout from "../SpeedoReadout";
 import SpeedoSweep from "../SpeedoSweep";
-import Gear from "../Gear";
+import Gear from "../GearReadout";
 const NAME = "SpeedoCluster";
 const speedoCluster = new PIXI.Container();
 /**

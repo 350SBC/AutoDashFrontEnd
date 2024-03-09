@@ -15,7 +15,7 @@ import { Renderables, RENDER_KEYS } from "./renderables/Renderables";
 import RPMGauge from "./renderables/RPMGauge";
 import SpeedoReadout from "./renderables/SpeedoReadout";
 import SpeedoSweep from "./renderables/SpeedoSweep";
-import Gear from "./renderables/Gear";
+import Gear from "./renderables/GearReadout";
 import fuelClusterControl from "./renderables/static/fuelClusterControl";
 import mpgClusterControl from "./renderables/static/mpgClusterControl";
 import rpmClusterControl from "./renderables/static/rpmClusterControl";

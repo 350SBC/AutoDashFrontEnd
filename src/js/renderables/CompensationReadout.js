@@ -18,11 +18,11 @@ class CompensationReadout extends SideReadout {
     this._initialize();
     this.bargraph.colors = {
       colors: [
-        chroma(this.theme.dangerColor),
-        chroma(this.theme.warningColor),
         chroma(this.theme.gaugeActiveColor),
+        chroma(this.theme.warningColor),
+        chroma(this.theme.dangerColor),
       ],
-      chromaDomain: [0, 20, 25],
+      chromaDomain: [0, 10, 25],
     };
   }
 
