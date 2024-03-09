@@ -7,8 +7,7 @@
     "dev": "webpack --mode development --config config/webpack.dev.js",
     "start": "webpack serve --mode development --config config/webpack.dev.js",
     "build": "webpack --mode production --config config/webpack.prod.js",
-    "web_server": "NODE_ENV=production node ./bin/www",
-    "rebuildRun": "npm run build; npm run web_server"
+    "web_server": "NODE_ENV=production node ./bin/www"
   },
   "repository": {
     "type": "git",

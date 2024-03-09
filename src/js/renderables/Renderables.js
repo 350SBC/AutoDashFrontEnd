@@ -21,9 +21,10 @@ export const RENDER_KEYS = {
   FULL_SCREEN_WARNING: 17,
   MAP_READOUT: 18,
   IGN_TIMING_READOUT: 19,
+  GEAR:20,
   //OFFLINE:20,
   // CLOSED_LOOP_READOUT: 19,
-  CLOSED_LOOP_COMP_READOUT: 20,
+  CLOSED_LOOP_COMP_READOUT: 21,
 };
 
 export class Renderables extends Array {

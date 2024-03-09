@@ -15,6 +15,7 @@ import { Renderables, RENDER_KEYS } from "./renderables/Renderables";
 import RPMGauge from "./renderables/RPMGauge";
 import SpeedoReadout from "./renderables/SpeedoReadout";
 import SpeedoSweep from "./renderables/SpeedoSweep";
+import Gear from "./renderables/Gear";
 import fuelClusterControl from "./renderables/static/fuelClusterControl";
 import mpgClusterControl from "./renderables/static/mpgClusterControl";
 import rpmClusterControl from "./renderables/static/rpmClusterControl";
@@ -45,6 +46,8 @@ const createGauges = ({ renderables }) => {
   const speedoSpeed = renderables.createRenderable(SpeedoSweep);
   /** @type {SpeedoReadout} */
   const speedoReadout = renderables.createRenderable(SpeedoReadout);
+  /** @type {Gear} */
+  const gear = renderables.createRenderable(Gear);
   /** @type {BorderWarnings} */
   const borderWarnings = renderables.createRenderable(BorderWarnings);
   /** @type {FuelGauge} */

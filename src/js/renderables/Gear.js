@@ -6,9 +6,9 @@ import { renderDigitTextures, createDigitSprites, formatSprites } from "../commo
 import { DATA_MAP } from "../common/dataMap";
 import Renderable from "./Renderable";
 import { RENDER_KEYS } from "./Renderables";
-const ODOMETER_KEY = DATA_MAP.ODOMETER.id;
-const ID = RENDER_KEYS.ODOMETER;
-class Odometer extends Renderable {
+const GEAR_KEY = DATA_MAP.GEAR.id;
+const ID = RENDER_KEYS.GEAR;
+class Gear extends Renderable {
   constructor({ renderer, theme }) {
     super({ renderer, theme });
     this._dashID = ID;
@@ -18,19 +18,19 @@ class Odometer extends Renderable {
     this.bgSprite = null;
     /** @type {PIXI.Texture[]} */
     this.numberTextures = [];
-    this.numberSprites = createDigitSprites(7);
+    this.numberSprites = createDigitSprites(1);
   }
 
   // the data store values we want to listen too
   get dataKey() {
-    return ODOMETER_KEY;
+    return GEAR_KEY;
   }
 
   set value(newValue) {
     this._value = newValue;
   }
   get gaugeHeight() {
-    return  SCREEN.ODOMETER_READOUT_HEIGHT;
+    return  SCREEN.GEAR_READOUT_HEIGHT;
   }
 
   initialize() {
@@ -62,5 +62,5 @@ class Odometer extends Renderable {
   }
 }
 
-Odometer.ID = ID;
-export default Odometer;
+Gear.ID = ID;
+export default Gear;
