@@ -22,9 +22,10 @@ export const RENDER_KEYS = {
   MAP_READOUT: 18,
   IGN_TIMING_READOUT: 19,
   GEAR:20,
+  FUEL_PRESSURE:21,
   //OFFLINE:20,
   // CLOSED_LOOP_READOUT: 19,
-  CLOSED_LOOP_COMP_READOUT: 21,
+  CLOSED_LOOP_COMP: 22,
 };
 
 export class Renderables extends Array {

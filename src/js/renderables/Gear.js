@@ -8,6 +8,7 @@ import Renderable from "./Renderable";
 import { RENDER_KEYS } from "./Renderables";
 const GEAR_KEY = DATA_MAP.GEAR.id;
 const ID = RENDER_KEYS.GEAR;
+
 class Gear extends Renderable {
   constructor({ renderer, theme }) {
     super({ renderer, theme });

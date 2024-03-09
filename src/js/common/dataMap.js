@@ -36,7 +36,7 @@ export const DATA_MAP = {
   INJECTOR_PULSEWIDTH: { id: keygen(), byteType: TYPES.INT16 },
   FUEL_FLOW: { id: keygen(), byteType: TYPES.INT16 }, // x,xxx pounds/hour
   CLOSED_LOOP_STATUS: { id: keygen(), byteType: TYPES.INT8 },
-  DUTY_CYCLE: { id: keygen(), byteType: TYPES.INT8 },
+  DUTY_CYCLE: { id: keygen(), byteType: TYPES.INT8 },  // injectors
   AFR_LEFT: { id: keygen(), byteType: TYPES.FLOAT }, // xx.x A/F
   CLOSED_LOOP_COMP: { id: keygen(), byteType: TYPES.INT16 },
   AFR_RIGHT: { id: keygen(), byteType: TYPES.FLOAT }, // xx.x A/F
@@ -53,6 +53,7 @@ export const DATA_MAP = {
   BATT_VOLTAGE: { id: keygen(), byteType: TYPES.FLOAT }, // xx.x volts
   LINE_PRESSURE: { id: keygen(), byteType: TYPES.INT16 }, // PSI 
   GEAR: { id: keygen(), byteType: TYPES.INT8 },
+  
   // Data from GPS
   ODOMETER: { id: keygen(), byteType: TYPES.UINT32 },// Current Miles Odometer
   TRIP_ODOMETER: { id: keygen(), byteType: TYPES.INT16 }, //

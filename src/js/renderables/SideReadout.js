@@ -22,10 +22,12 @@ class SideReadout extends Renderable {
   static ReadoutOptions = {
     voltage: {textureName: "battery.png", decimalPlaces: 1, maxValue: 16, minValue: 10.0},
     oil: {textureName: "oil.png", decimalPlaces: 0, minValue: 0, maxValue: 99},
+    fuel: {textureName: "fuel.png", decimalPlaces: 0, minValue: 0, maxValue: 99},
     coolant: {textureName: "temp.png", decimalPlaces: 0, minValue: 120, maxValue: 250},
     mat: {textureName: "tempair.png", decimalPlaces: 0, minValue: 120, maxValue: 250},
     ign: {text: "Ign", decimalPlaces: 1, minValue: 0, maxValue: 50},
     vac: {text: "inHg", decimalPlaces: 1, minValue: 0, maxValue: 30},
+    comp: {text: "comp", decimalPlaces: 1, minValue: 0, maxValue: 100},
   }
   static FIXED_WIDTH = GAUGE_WIDTH;
   static FIXED_LENGTH = GAUGE_HEIGHT;

@@ -21,13 +21,15 @@ import mpgClusterControl from "./renderables/static/mpgClusterControl";
 import rpmClusterControl from "./renderables/static/rpmClusterControl";
 import speedoClusterControl from "./renderables/static/speedoClusterControl";
 import OilPressureReadout from "./renderables/OilPressureReadout";
+import FuelPressureReadout from "./renderables/FuelPressureReadout";
 import TimingGraph from "./renderables/TimingGraph";
 import engineGraphsControl from "./renderables/static/engineGraphsControl";
-import testReadOutsControl from "./renderables/static/testReadouts";
+import testReadOutsControl from "./renderables/static/Panel2";
 import { app_settings } from "./appConfig";
 import FullScreenWarnings from "./renderables/FullScreenWarning";
 import IgnTimingReadout from "./renderables/IgnTimingReadout";
 import VacuumReadout from "./renderables/VacuumReadout";
+import compensationReadout from "./renderables/CompensationReadout";
 import Offline from "./renderables/Offline";
 
 const auxScreenClusters = []
@@ -74,6 +76,8 @@ const createGauges = ({ renderables }) => {
     renderables.createRenderable(FuelGraph); 
     renderables.createRenderable(IgnTimingReadout);
     renderables.createRenderable(VacuumReadout);
+    renderables.createRenderable(FuelPressureReadout);
+    renderables.createRenderable(compensationReadout);
     renderables.createRenderable(Offline);
   }
 };
